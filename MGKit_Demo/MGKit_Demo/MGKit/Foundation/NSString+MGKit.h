@@ -24,8 +24,53 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGSize)mg_sizeWithString:(NSString *)string andFont:(UIFont *)font andMaxSize:(CGSize)size;
 + (CGFloat)mg_widthWithString:(NSString *)string andFont:(UIFont *)font andMaxSize:(CGSize)size;
 + (CGFloat)mg_heightWithString:(NSString *)string andFont:(UIFont *)font andMaxSize:(CGSize)size;
-- (CGSize)mg_sizeWithAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes andMaxSize:(CGSize)size;
++ (CGSize)mg_sizeWithString:(NSString *)string Attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes andMaxSize:(CGSize)size;
 
+
+/**
+ MD5加密 32位小写
+
+ @return 加密后的32位小写字符串
+ */
+- (NSString *)mg_MD5ForLower32Bate;
+/**
+ MD5加密 32位大写
+ 
+ @return 加密后的32位大写字符串
+ */
+- (NSString *)mg_MD5ForUpper32Bate;
+/**
+ * MD5 hash
+ */
+- (NSString *)mg_MD5Hash;
+
+/**
+ MD5加密 16位小写
+ 
+ @return 加密后的16位小写字符串
+ */
+- (NSString *)mg_MD5ForLower16Bate;
+/**
+ MD5加密 16大写
+
+ @return 加密后的16位大写字符串
+ */
+- (NSString *)mg_MD5ForUpper16Bate;
+/**
+  明文 -> base64 加密后的字符串
+
+ @return 加密字符串
+ */
+- (NSString *)mg_Base64EncodeString;
+/**
+ base64 加密字符串 -> 明文
+
+ @return 原始字符串
+ */
+- (NSString *)mg_Base64DecodeString;
+
+
+- (NSString *)hmacSHA1StringWithKey:(NSString *)key;
 
 @end
 

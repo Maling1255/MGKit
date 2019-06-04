@@ -29,6 +29,10 @@ typedef NS_ENUM(NSInteger, MGDottedLineOrientation) {
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGPoint origin;
 
+/**
+ 移除所有的子控件
+ */
+- (void)mg_removeAllSubviews;
 
 /**
  * 绘制圆角
@@ -42,13 +46,23 @@ typedef NS_ENUM(NSInteger, MGDottedLineOrientation) {
 /**
  阴影效果
 
- @param radius 阴影半径
+ @param shadowRadius 阴影半径
  @param size 阴影偏移
  @param opacity 不透明 （0-1范围）
  @param color 阴影颜色
  @param path 阴影区域
+ @param cornerRadius 视图圆角半径
+ @param borderWidth 边框宽度
+ @param borderColor 边框颜色
  */
-- (void)mg_shadowRadius:(CGFloat)radius offset:(CGSize)size opacity:(CGFloat)opacity color:(id)color path:(UIBezierPath *)path;
+- (void)mg_shadowRadius:(CGFloat)shadowRadius offset:(CGSize)size opacity:(CGFloat)opacity color:(id)color path:(UIBezierPath *)path cornerRadius:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+- (void)mg_shadowRadius:(CGFloat)shadowRadius offset:(CGSize)size opacity:(CGFloat)opacity color:(id)color path:(UIBezierPath *)path;
+
+/**
+ 隐藏阴影
+ */
+- (void)mg_hideShadow;
+
 
 /**
  添加顶部&底部线条
@@ -77,12 +91,19 @@ typedef NS_ENUM(NSInteger, MGDottedLineOrientation) {
 - (void)mg_addDottedLine:(MGDottedLineOrientation)orientation dotLineColor:(id)color ratio:(NSNumber *)ratio dotLineThickness:(NSNumber *)dotLineThickness dotlineLength:(CGFloat)dotlineLength dotlineSpace:(CGFloat)dotlineSpace;
 - (void)mg_addDottedLine;
 
+typedef void (^MGGestureActionBlock)(UIView *view, UIGestureRecognizer *gestureRecoginzer);
 /**
  点击view 事件
 
  @param block 回调处理
  */
-- (void)mg_tapActionWithBlock:(void (^)(UIView *))block;
+- (void)mg_tapActionWithBlock:(MGGestureActionBlock)block;
+/**
+ 长按 view 事件
+
+ @param block block 回调
+ */
+- (void)mg_longPressActionWithBlock:(MGGestureActionBlock)block;
 
 /**
  遍历子控件
@@ -90,6 +111,16 @@ typedef NS_ENUM(NSInteger, MGDottedLineOrientation) {
  @param block 回调subview
  */
 - (void)mg_enumerateEachSubviews:(void (^)(UIView *subview))block;
+
+/**
+ 第一响应视图
+ */
+- (UIView *)mg_firstResponder;
+
+/**
+ 当前view所在的viewcontroler
+ */
+- (UIViewController *)mg_viewController;
 
 @end
 

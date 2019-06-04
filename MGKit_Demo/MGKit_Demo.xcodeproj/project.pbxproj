@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8494B9722A50F4F00C3F66B /* UIDevice+MGKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F8494B9622A50F4F00C3F66B /* UIDevice+MGKit.m */; };
+		F8494B9A22A511EF00C3F66B /* MGKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = F8494B9922A511EF00C3F66B /* MGKeyChain.m */; };
+		F8494B9D22A515CD00C3F66B /* NSBundle+MGKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F8494B9C22A515CD00C3F66B /* NSBundle+MGKit.m */; };
+		F8494BA022A5334900C3F66B /* NSFileManager+MGKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F8494B9F22A5334900C3F66B /* NSFileManager+MGKit.m */; };
+		F8494BA322A538B500C3F66B /* MGFileCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8494BA222A538B500C3F66B /* MGFileCacheManager.m */; };
 		F853E77022A1068E00A22B6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F853E76F22A1068E00A22B6B /* AppDelegate.m */; };
 		F853E77322A1068E00A22B6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F853E77222A1068E00A22B6B /* ViewController.m */; };
 		F853E77622A1068E00A22B6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F853E77422A1068E00A22B6B /* Main.storyboard */; };
@@ -29,9 +34,20 @@
 		F853E7F722A1089500A22B6B /* NSDictionary+MGKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F853E7E122A1089400A22B6B /* NSDictionary+MGKit.m */; };
 		F853E7F822A1089500A22B6B /* MGArchiveBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F853E7E622A1089500A22B6B /* MGArchiveBaseModel.m */; };
 		F853E7F922A1089500A22B6B /* MGToast.m in Sources */ = {isa = PBXBuildFile; fileRef = F853E7E722A1089500A22B6B /* MGToast.m */; };
+		F853E7FC22A12DE300A22B6B /* MGObjectRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = F853E7FB22A12DE300A22B6B /* MGObjectRuntime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8494B9522A50F4E00C3F66B /* UIDevice+MGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+MGKit.h"; sourceTree = "<group>"; };
+		F8494B9622A50F4F00C3F66B /* UIDevice+MGKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+MGKit.m"; sourceTree = "<group>"; };
+		F8494B9822A511EF00C3F66B /* MGKeyChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGKeyChain.h; sourceTree = "<group>"; };
+		F8494B9922A511EF00C3F66B /* MGKeyChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGKeyChain.m; sourceTree = "<group>"; };
+		F8494B9B22A515CD00C3F66B /* NSBundle+MGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+MGKit.h"; sourceTree = "<group>"; };
+		F8494B9C22A515CD00C3F66B /* NSBundle+MGKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+MGKit.m"; sourceTree = "<group>"; };
+		F8494B9E22A5334900C3F66B /* NSFileManager+MGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+MGKit.h"; sourceTree = "<group>"; };
+		F8494B9F22A5334900C3F66B /* NSFileManager+MGKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+MGKit.m"; sourceTree = "<group>"; };
+		F8494BA122A538B500C3F66B /* MGFileCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGFileCacheManager.h; sourceTree = "<group>"; };
+		F8494BA222A538B500C3F66B /* MGFileCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGFileCacheManager.m; sourceTree = "<group>"; };
 		F853E76B22A1068E00A22B6B /* MGKit_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGKit_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F853E76E22A1068E00A22B6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F853E76F22A1068E00A22B6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +91,8 @@
 		F853E7E522A1089500A22B6B /* MGArchiveBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGArchiveBaseModel.h; sourceTree = "<group>"; };
 		F853E7E622A1089500A22B6B /* MGArchiveBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGArchiveBaseModel.m; sourceTree = "<group>"; };
 		F853E7E722A1089500A22B6B /* MGToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGToast.m; sourceTree = "<group>"; };
+		F853E7FA22A12DE300A22B6B /* MGObjectRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGObjectRuntime.h; sourceTree = "<group>"; };
+		F853E7FB22A12DE300A22B6B /* MGObjectRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MGObjectRuntime.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,14 +165,16 @@
 				F853E7C122A1089400A22B6B /* UIWindow+MGKit.m */,
 				F853E7D122A1089400A22B6B /* UIBezierPath+MGKit.h */,
 				F853E7C722A1089400A22B6B /* UIBezierPath+MGKit.m */,
-				F853E7CC22A1089400A22B6B /* UINavigationBar+MGKit.m */,
 				F853E7D622A1089400A22B6B /* UINavigationBar+MGKit.h */,
+				F853E7CC22A1089400A22B6B /* UINavigationBar+MGKit.m */,
 				F853E7D222A1089400A22B6B /* UIColor+MGKit.h */,
 				F853E7C622A1089400A22B6B /* UIColor+MGKit.m */,
-				F853E7D422A1089400A22B6B /* UIImage+MGKit.m */,
 				F853E7C922A1089400A22B6B /* UIImage+MGKit.h */,
+				F853E7D422A1089400A22B6B /* UIImage+MGKit.m */,
 				F853E7CA22A1089400A22B6B /* UIFont+MGKit.h */,
 				F853E7D822A1089400A22B6B /* UIFont+MGKit.m */,
+				F8494B9522A50F4E00C3F66B /* UIDevice+MGKit.h */,
+				F8494B9622A50F4F00C3F66B /* UIDevice+MGKit.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -170,6 +190,10 @@
 				F853E7DA22A1089400A22B6B /* NSArray+MGKit.m */,
 				F853E7DD22A1089400A22B6B /* NSDictionary+MGKit.h */,
 				F853E7E122A1089400A22B6B /* NSDictionary+MGKit.m */,
+				F8494B9B22A515CD00C3F66B /* NSBundle+MGKit.h */,
+				F8494B9C22A515CD00C3F66B /* NSBundle+MGKit.m */,
+				F8494B9E22A5334900C3F66B /* NSFileManager+MGKit.h */,
+				F8494B9F22A5334900C3F66B /* NSFileManager+MGKit.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -178,9 +202,15 @@
 			isa = PBXGroup;
 			children = (
 				F853E7E422A1089500A22B6B /* MGToast.h */,
+				F853E7E722A1089500A22B6B /* MGToast.m */,
 				F853E7E522A1089500A22B6B /* MGArchiveBaseModel.h */,
 				F853E7E622A1089500A22B6B /* MGArchiveBaseModel.m */,
-				F853E7E722A1089500A22B6B /* MGToast.m */,
+				F853E7FA22A12DE300A22B6B /* MGObjectRuntime.h */,
+				F853E7FB22A12DE300A22B6B /* MGObjectRuntime.m */,
+				F8494B9822A511EF00C3F66B /* MGKeyChain.h */,
+				F8494B9922A511EF00C3F66B /* MGKeyChain.m */,
+				F8494BA122A538B500C3F66B /* MGFileCacheManager.h */,
+				F8494BA222A538B500C3F66B /* MGFileCacheManager.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -256,20 +286,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				F853E7EB22A1089500A22B6B /* UILabel+MGKit.m in Sources */,
+				F8494B9A22A511EF00C3F66B /* MGKeyChain.m in Sources */,
 				F853E7F422A1089500A22B6B /* NSArray+MGKit.m in Sources */,
 				F853E7F522A1089500A22B6B /* NSTimer+MGKit.m in Sources */,
+				F853E7FC22A12DE300A22B6B /* MGObjectRuntime.m in Sources */,
 				F853E7F122A1089500A22B6B /* UIButton+MGKit.m in Sources */,
 				F853E7E822A1089500A22B6B /* UIWindow+MGKit.m in Sources */,
 				F853E7F322A1089500A22B6B /* UIFont+MGKit.m in Sources */,
 				F853E7F222A1089500A22B6B /* UIImage+MGKit.m in Sources */,
 				F853E7F022A1089500A22B6B /* UINavigationBar+MGKit.m in Sources */,
+				F8494BA322A538B500C3F66B /* MGFileCacheManager.m in Sources */,
+				F8494B9D22A515CD00C3F66B /* NSBundle+MGKit.m in Sources */,
 				F853E77322A1068E00A22B6B /* ViewController.m in Sources */,
 				F853E7F922A1089500A22B6B /* MGToast.m in Sources */,
 				F853E77E22A1068E00A22B6B /* main.m in Sources */,
 				F853E7F622A1089500A22B6B /* NSString+MGKit.m in Sources */,
+				F8494B9722A50F4F00C3F66B /* UIDevice+MGKit.m in Sources */,
 				F853E7F822A1089500A22B6B /* MGArchiveBaseModel.m in Sources */,
 				F853E7F722A1089500A22B6B /* NSDictionary+MGKit.m in Sources */,
 				F853E7EC22A1089500A22B6B /* UIColor+MGKit.m in Sources */,
+				F8494BA022A5334900C3F66B /* NSFileManager+MGKit.m in Sources */,
 				F853E7EF22A1089500A22B6B /* UIView+MGKit.m in Sources */,
 				F853E7ED22A1089500A22B6B /* UIBezierPath+MGKit.m in Sources */,
 				F853E77022A1068E00A22B6B /* AppDelegate.m in Sources */,
@@ -418,6 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TU4FCR75VS;
 				INFOPLIST_FILE = MGKit_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TU4FCR75VS;
 				INFOPLIST_FILE = MGKit_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

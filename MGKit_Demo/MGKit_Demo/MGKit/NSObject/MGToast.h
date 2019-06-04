@@ -6,13 +6,13 @@
 //  Copyright © 2019 maling. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface MGToast : NSObject
 
 + (void)mg_show:(NSString*) text;
 + (void)mg_show:(NSString *)text duration:(int) duration;
-//+ (void)mg_showCustomView:(UIView *)view duration:(CGFloat)duration;
++ (void)mg_showCustomView:(UIView *)view duration:(CGFloat)duration;
 
 @end
 

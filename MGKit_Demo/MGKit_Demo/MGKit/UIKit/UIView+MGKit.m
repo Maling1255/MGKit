@@ -144,6 +144,17 @@
     self.frame = frame;
 }
 
+- (void)mg_removeAllSubviews
+{
+    while (self.subviews.count) {
+        UIView* child = self.subviews.lastObject;
+        if ([child isKindOfClass:[UIImageView class]]) {
+            ((UIImageView*)child).image = nil;
+        }
+        [child removeFromSuperview];
+        child = nil;
+    }
+}
 
 - (void)mg_cornerRadius:(CGFloat)radius
 {
@@ -170,10 +181,19 @@
     self.layer.shadowColor = [UIColor mg_colorWithColorValue:color].CGColor;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowPath = path ? path.CGPath :[[UIBezierPath bezierPathWithRect:self.bounds] CGPath];
-    
-//    self.layer.cornerRadius = cradius;
-//    self.layer.borderWidth = width;
-//    self.layer.borderColor = borderColor.CGColor
+}
+
+- (void)mg_shadowRadius:(CGFloat)shadowRadius offset:(CGSize)size opacity:(CGFloat)opacity color:(id)color path:(UIBezierPath *)path cornerRadius:(CGFloat)cornerRadius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
+{
+    [self mg_shadowRadius:shadowRadius offset:size opacity:opacity color:color path:path];
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.borderWidth = borderWidth;
+    self.layer.borderColor = borderColor.CGColor;
+}
+
+- (void)mg_hideShadow
+{
+    self.layer.shadowColor = [UIColor clearColor].CGColor;
 }
 
 - (void)mg_addLineUp:(BOOL)hasUp andDown:(BOOL)hasDown andColor:(UIColor *)color
@@ -260,7 +280,7 @@
 
 
 static const char *ActionHandlerTapGestureKey;
-- (void)mg_tapActionWithBlock:(void (^)(UIView *))block
+- (void)mg_tapActionWithBlock:(MGGestureActionBlock)block
 {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &ActionHandlerTapGestureKey);
@@ -274,14 +294,39 @@ static const char *ActionHandlerTapGestureKey;
     objc_setAssociatedObject(self, &ActionHandlerTapGestureKey, block, OBJC_ASSOCIATION_COPY);
 }
 
-- (void)handleActionForTapGesture:(UITapGestureRecognizer *)gesture {
+- (void)handleActionForTapGesture:(UITapGestureRecognizer *)gesture
+{
     if (gesture.state == UIGestureRecognizerStateRecognized)  {
-        void(^action)(UIView *) = objc_getAssociatedObject(self, &ActionHandlerTapGestureKey);
-        if (action)  {
-            action(gesture.view);
+        MGGestureActionBlock block = objc_getAssociatedObject(self, &ActionHandlerTapGestureKey);
+        if (block)  {
+            block(gesture.view, gesture);
         }
     }
 }
+
+static const char *ActionHandlerLongPressGestureKey;
+- (void)mg_longPressActionWithBlock:(MGGestureActionBlock)block
+{
+    UILongPressGestureRecognizer *gesture = objc_getAssociatedObject(self, &ActionHandlerLongPressGestureKey);
+    if (!gesture)
+    {
+        gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(jk_handleActionForLongPressGesture:)];
+        [self addGestureRecognizer:gesture];
+        objc_setAssociatedObject(self, &ActionHandlerLongPressGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
+    }
+    objc_setAssociatedObject(self, &ActionHandlerLongPressGestureKey, block, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)jk_handleActionForLongPressGesture:(UITapGestureRecognizer*)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateRecognized) {
+        MGGestureActionBlock block = objc_getAssociatedObject(self, &ActionHandlerLongPressGestureKey);
+        if (block) {
+            block(gesture.view, gesture);
+        }
+    }
+}
+
 
 - (void)mg_enumerateEachSubviews:(void (^)(UIView *subview))block
 {
@@ -290,5 +335,29 @@ static const char *ActionHandlerTapGestureKey;
         block(subview);
     }];
 }
+
+- (UIView *)mg_firstResponder
+{
+    if (self.isFirstResponder) {
+        return self;
+    }
+    for (UIView *view in self.subviews) {
+        UIView *f = [view mg_firstResponder];
+        if (f) return f;
+    }
+    return nil;
+}
+- (UIViewController *)mg_viewController
+{
+    UIResponder *responder = self.nextResponder;
+    do {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+        responder = responder.nextResponder;
+    } while (responder);
+    return nil;
+}
+
 
 @end

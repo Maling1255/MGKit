@@ -21,8 +21,10 @@
 #import <MGKit/NSDictionary+MGKit.h>
 #import <MGKit/NSArray+MGKit.h>
 #import <MGKit/NSTimer+MGKit.h>
+
 #import <MGKit/MGToast.h>
 #import <MGKit/MGArchiveBaseModel.h>
+#import <MGKit/MGObjectRuntime.h>
 #else
 #import "UILabel+MGKit.h"
 #import "UIButton+MGKit.h"
@@ -38,8 +40,10 @@
 #import "NSDictionary+MGKit.h"
 #import "NSArray+MGKit.h"
 #import "NSTimer+MGKit.h"
+
 #import "MGToast.h"
 #import "MGArchiveBaseModel.h"
+#import "MGObjectRuntime.h"
 #endif
 
 

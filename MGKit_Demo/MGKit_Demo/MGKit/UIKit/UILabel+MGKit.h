@@ -17,5 +17,19 @@
 + (UILabel *)mg_labelText:(NSString *)text textColor:(id)color font:(id)font textAlignment:(NSTextAlignment)textAlignment;
 + (UILabel *)mg_labelText:(NSString *)text textColor:(id)color font:(id)font textAlignment:(NSTextAlignment)textAlignment backgroundColor:(id)backgroundColor;
 
+/**
+ *  改变行间距
+ */
++ (void)mg_changeLineSpaceForLabel:(UILabel *)label WithSpace:(float)space;
+
+/**
+ *  改变字间距
+ */
++ (void)mg_changeWordSpaceForLabel:(UILabel *)label WithSpace:(float)space;
+
+/**
+ *  改变行间距和字间距
+ */
++ (void)mg_changeSpaceForLabel:(UILabel *)label withLineSpace:(float)lineSpace WordSpace:(float)wordSpace;
 
 @end
